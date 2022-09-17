@@ -22,7 +22,7 @@ def Hamming(temp, ec):
         if temp[i]!=ec[i]:
             c+=1
     return c
-# Trying example from https://machinelearningmastery.com/method-of-lagrange-multipliers-the-theory-behind-support-vector-machines-part-1-the-separable-case/
+
 X_train, X_test, y_train, y_test = np.load('./data.npy', allow_pickle=True)
 # Loading data for SVM Classification
 x = X_train
@@ -99,8 +99,6 @@ def compute_sigma(test_point):
         alpha += lagrange[i]*y[i]*np.transpose(test_point)@x[i]
     return alpha
 
-# The lagrange values obtained after annealing don't match the actual values given in the example website given above
-# After above is fixed, I will implement the code to find the weights and bias corresponding to the hyperplane 
 
 # Computing bias w0
 w_all = []
